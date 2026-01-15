@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Chapter Begins ❤️</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Great+Vibes&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --deep-maroon: #6d2323;
+            --dusty-rose: #c25b5b;
+            --soft-pink: #eebbb0;
+            --cream: #f9f3ee;
+            --paper-texture: url('https://www.transparenttextures.com/patterns/cream-paper.png');
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html, body {
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--soft-pink);
+            background-image: var(--paper-texture);
+            font-family: 'Libre Baskerville', serif;
+            color: var(--deep-maroon);
+        }
+
+        /* --- Shared Decor --- */
+        .floating-stickers {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+            overflow: hidden;
+        }
+
+        .sticker {
+            position: absolute;
+            /* Default size, overridden inline for variety */
+            font-size: 2.5rem;
+            filter: drop-shadow(3px 3px 2px rgba(0,0,0,0.1));
+            opacity: 0.6; /* Slightly more transparent so text is readable */
+            animation: float 8s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-15px) rotate(5deg); }
+        }
+
+        /* ============================
+           PAGE 1: THE PROPOSAL
+        ============================ */
+        .hero-section {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            padding: 20px;
+        }
+
+        .proposal-card {
+            background: rgba(249, 243, 238, 0.85);
+            backdrop-filter: blur(10px);
+            padding: 60px 40px;
+            border-radius: 40% 40% 40% 40% / 60% 60% 40% 40%;
+            border: 3px double var(--dusty-rose);
+            text-align: center;
+            box-shadow: 0 25px 50px -12px rgba(109, 35, 35, 0.25);
+            max-width: 600px;
+            width: 100%;
+            z-index: 2;
+        }
+
+        .greeting {
+            font-family: 'Great Vibes', cursive;
+            font-size: 3rem;
+            color: var(--dusty-rose);
+            margin-bottom: 10px;
+        }
+
+        .main-question {
+            font-size: 3rem;
+            line-height: 1.1;
+            margin-bottom: 50px;
+            font-weight: 700;
+            text-shadow: 1px 1px 0px var(--soft-pink);
+        }
+
+        .btn-group {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .proposal-btn {
+            background: linear-gradient(135deg, var(--deep-maroon), var(--dusty-rose));
+            color: var(--cream);
+            border: none;
+            padding: 16px 35px;
+            font-size: 1.1rem;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 20px rgba(109, 35, 35, 0.2);
+        }
+
+        .proposal-btn:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 15px 30px rgba(109, 35, 35, 0.3);
+        }
+
+        /* ============================
+           PAGE 2: THE CELEBRATION
+        ============================ */
+        .celebration-section {
+            min-height: 100vh;
+            display: none;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            background: linear-gradient(180deg, rgba(194,91,91,1) 0%, rgba(141,58,58,1) 100%);
+            border-top: 15px solid var(--cream);
+            padding: 50px 20px;
+            overflow: hidden;
+        }
+
+        .announcement-frame {
+            background-color: var(--cream);
+            background-image: var(--paper-texture);
+            padding: 50px;
+            max-width: 800px;
+            width: 100%;
+            border-radius: 20px;
+            box-shadow: 0 30px 60px rgba(0,0,0,0.3);
+            text-align: center;
+            position: relative;
+            z-index: 5;
+            opacity: 0; 
+            transform: translateY(50px);
+            transition: all 1s ease-out;
+        }
+        
+        .slide-up-active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .ornamental-divider {
+            font-family: 'Cinzel Decorative', cursive;
+            font-size: 2rem;
+            color: var(--dusty-rose);
+            margin: 20px 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .ornamental-divider::before, .ornamental-divider::after {
+            content: '';
+            height: 2px;
+            background-color: var(--dusty-rose);
+            flex-grow: 1;
+            margin: 0 15px;
+            opacity: 0.5;
+        }
+
+        .big-yes {
+            font-family: 'Great Vibes', cursive;
+            font-size: 5rem;
+            color: var(--deep-maroon);
+            line-height: 1;
+        }
+
+        .sub-headline {
+             font-family: 'Cinzel Decorative', cursive;
+             font-size: 1.8rem;
+             margin-top: 10px;
+             color: var(--deep-maroon);
+        }
+
+        .polaroid-container {
+            background: white;
+            padding: 15px 15px 40px 15px;
+            box-shadow: 5px 5px 15px rgba(0,0,0,0.2);
+            transform: rotate(-2deg);
+            width: 80%;
+            margin: 40px auto;
+            max-width: 400px;
+            border: 1px solid #eee;
+        }
+
+        .polaroid-image {
+            width: 100%;
+            height: 250px;
+            background-image: url('ello.jpeg');
+            background-size: cover;
+            background-position: center;
+            border: 2px solid var(--deep-maroon);
+        }
+
+        .final-text {
+            font-family: 'Poppins', sans-serif;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            color: var(--dusty-rose);
+            margin-top: 20px;
+        }
+
+        /* --- Click Effect --- */
+        .heart-burst {
+            position: fixed;
+            pointer-events: none;
+            z-index: 9999;
+            font-size: 2rem;
+            animation: burstAnim 1s forwards ease-out;
+        }
+        @keyframes burstAnim {
+            0% { transform: scale(0.5); opacity: 1; }
+            100% { transform: scale(3); opacity: 0; }
+        }
+
+    </style>
+</head>
+<body>
+
+    <section class="hero-section">
+        <div class="floating-stickers">
+            <div class="sticker" style="top:5%; left:5%; transform: rotate(-15deg);">🛼</div>
+            <div class="sticker" style="top:15%; right:8%; font-size: 3rem; animation-delay: 1s;">🍒</div>
+            <div class="sticker" style="top:25%; left:15%; font-size: 1.5rem;">🎀</div>
+            <div class="sticker" style="bottom:20%; left:5%; animation-delay: 2s; transform: rotate(10deg);">📖</div>
+            <div class="sticker" style="bottom:10%; right:12%; font-size: 3.5rem; animation-delay: 0.5s;">🎲</div>
+            <div class="sticker" style="top:50%; right:5%; animation-delay: 1.5s;">🎟️</div>
+            <div class="sticker" style="top:40%; left:2%; font-size: 2rem; transform: rotate(-20deg);">💄</div>
+            <div class="sticker" style="bottom:5%; left:35%; font-size: 2.8rem;">🎧</div>
+            <div class="sticker" style="top:8%; left:40%; font-size: 1.8rem; animation-delay: 0.3s;">💌</div>
+            <div class="sticker" style="top:65%; right:25%; font-size: 2.2rem; transform: rotate(25deg);">🗝️</div>
+            <div class="sticker" style="top:30%; right:35%; font-size: 1.5rem; opacity: 0.4;">🍒</div>
+             <div class="sticker" style="bottom:35%; left:25%; font-size: 2rem; opacity: 0.5;">🎀</div>
+        </div>
+
+        <div class="proposal-card">
+            <h2 class="greeting">Dearest XYZ,</h2>
+            <h1 class="main-question">Will you be my girlfriend?</h1>
+            
+            <div class="btn-group">
+                <button class="proposal-btn" onclick="handleYes(event)">Yes, of course!</button>
+                <button class="proposal-btn" onclick="handleYes(event)">Absolutely!</button>
+                <button class="proposal-btn" onclick="handleYes(event)">Why not?</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="celebration-section" id="celebrationView">
+        <div class="floating-stickers">
+             <div class="sticker" style="top:2%; left:45%; font-size: 4rem; animation-delay: 0.2s;">✨</div>
+             <div class="sticker" style="top:20%; left:5%; font-size: 3rem;">🥂</div>
+             <div class="sticker" style="bottom:15%; right:5%; font-size: 3.5rem; animation-delay: 1s;">💖</div>
+             <div class="sticker" style="top:50%; right:2%; font-size: 2.5rem;">🎵</div>
+             <div class="sticker" style="top:10%; right:15%; font-size: 2rem; transform: rotate(15deg);">🎀</div>
+             <div class="sticker" style="bottom:5%; left:10%; font-size: 2.8rem; animation-delay: 1.5s;">🍒</div>
+             <div class="sticker" style="top:35%; left:2%; font-size: 2rem;">💋</div>
+             <div class="sticker" style="bottom:30%; right:30%; font-size: 1.5rem; opacity:0.5;">✨</div>
+             <div class="sticker" style="top:60%; left:15%; font-size: 2.5rem; transform: rotate(-10deg);">🧸</div>
+             <div class="sticker" style="top:5%; right:35%; font-size: 2rem;">💝</div>
+             <div class="sticker" style="bottom:45%; left:5%; font-size: 1.8rem;">🎻</div>
+              <div class="sticker" style="top:25%; right:5%; font-size: 2.2rem; transform: rotate(30deg);">🛼</div>
+        </div>
+
+        <div class="announcement-frame" id="annoFrame">
+            <h1 class="big-yes">She Said Yes!</h1>
+            <div class="ornamental-divider">Is it official?</div>
+            <h2 class="sub-headline">The Start of Our Chapter</h2>
+
+            <div class="polaroid-container">
+                <div class="polaroid-image"></div>
+            </div>
+
+            <div class="ornamental-divider">♥</div>
+            <p class="final-text">Where Romance Book Lovers (and now us) Gather</p>
+            <p style="margin-top: 10px;">xo</p>
+        </div>
+
+    </section>
+
+    <script>
+        function handleYes(event) {
+            createBurst(event.clientX, event.clientY);
+            const celebSection = document.getElementById('celebrationView');
+            const frame = document.getElementById('annoFrame');
+            celebSection.style.display = 'flex';
+            setTimeout(() => {
+                celebSection.scrollIntoView({ behavior: 'smooth' });
+            }, 200);
+            setTimeout(() => {
+                frame.classList.add('slide-up-active');
+            }, 600);
+        }
+
+        function createBurst(x, y) {
+            const burst = document.createElement('div');
+            burst.innerText = '💖';
+            burst.classList.add('heart-burst');
+            burst.style.left = x + 'px';
+            burst.style.top = y + 'px';
+            document.body.appendChild(burst);
+            setTimeout(() => burst.remove(), 1000);
+        }
+    </script>
+</body>
+</html>
